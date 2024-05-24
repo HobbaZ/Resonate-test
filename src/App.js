@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Footer from "./components/Footer";
+import AppNavBar from "./components/NavBar";
+const Home = React.lazy(() => import("./pages/Home"));
+const About = React.lazy(() => import("./pages/About"));
+const Contacts = React.lazy(() => import("./pages/Contacts"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <React.Suspense fallback={<p>Loading page...</p>}>
+          <div>
+            <AppNavBar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Contacts />} />{" "}
+                {/* Set Contacts as home page */}
+                <Route path="/Home" element={<Home />} />
+                <Route path="/About" element={<About />} />
+                <Route
+                  path="*"
+                  element={<h1>404! This page doesn't exist</h1>}
+                />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </React.Suspense>
+      </Router>
+    </>
   );
 }
 

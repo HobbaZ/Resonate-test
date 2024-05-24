@@ -1,38 +1,215 @@
-.App {
+:root {
+  --dark: black;
+  --light: white;
+  --blue: #17274e;
+  --purple: #2b1941;
+  --transparent: rgba(255, 255, 255, 0);
+  --active: rgb(221, 221, 0);
+  --hover: orange;
+  --gradient1: #0f774f;
+  --gradient2: #ff0000;
+  --gradient3: #360a7c;
+}
+
+.active {
+  color: var(--active);
+  text-decoration: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(45deg, var(--gradient1), var(--gradient3));
+  /*background-color: var(--gradient1);*/
+  background-size: 800% 800%;
+  color: var(--light);
+  width: 100%;
+  padding-bottom: 100px;
+  animation: example 20s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes example {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn {
+  color: var(--light);
+  border: 1px solid var(--light);
+}
+
+.btn:hover {
+  color: var(--active);
+  border: 1px solid var(--active);
+}
+
+.card {
+  background-color: var(--dark);
+  /*background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));*/
+  border: 0;
+  color: var(--light);
+  /*transition: transform 0.2s ease-in-out;*/
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  box-shadow: 0px 14px 80px rgba(0, 0, 0, 0.5);
+  /*padding: 10px;*/
+  width: 300px;
+  min-width: 280px;
+  max-width: 400px;
+  flex-shrink: 1;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card .photoStyle {
+  padding: 5px;
+  border-radius: 50%;
+  transition: border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover .photoStyle {
+  padding: 0;
+  border-radius: 5px;
+  /*box-shadow: 0px 14px 80px rgba(0, 0, 0, 0.5);*/
+}
+
+.cardInfo {
+  width: 100%;
+  margin: auto;
+}
+
+.card-title {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardTop {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 50%;
+  padding: 0;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.cardTopRight {
+  padding: 10px;
+  width: fit-content;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: normal;
+  padding: 10px;
+  flex-shrink: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.contactsContainer {
+  justify-content: space-around;
+  margin: 5px;
+  padding: 5px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.fa-solid {
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+footer {
+  background-color: var(--transparent);
+  backdrop-filter: blur(20px);
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 80px;
+  padding: 5px;
+}
+
+.form-control {
+  float: right;
+}
+
+.icon {
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+.imgContainer {
+  width: auto;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: large;
+  color: var(--light);
+  font-weight: 500;
+  width: 100vw;
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--light);
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 20px;
+  /*padding-left: 20px;*/
+}
+
+.nav-link:hover {
+  color: var(--hover);
+  text-decoration: underline;
+}
+
+.navbar-toggler-icon {
+  background-color: var(--light);
+}
+
+.navbar-brand:hover,
+.icon:hover {
+  color: var(--active);
+  text-decoration: none;
+}
+
+.photoStyle {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0;
+  flex-shrink: 2;
+  max-width: 128px;
+  max-height: 128px;
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 0;
+    margin: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 992px) {
+  .nav-link {
+    padding-left: 0px;
   }
 }
