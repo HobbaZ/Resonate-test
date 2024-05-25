@@ -34,16 +34,17 @@ body {
 
 .btn,
 .btn-primary {
-  color: var(--green);
-  background-color: var(--hover);
-  border: 2px solid var(--hover);
+  color: var(--hover);
+  background-color: var(--dark);
+  border: 0;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
   font-weight: 500;
 }
 
 .btn:hover {
   color: var(--light);
   background-color: var(--hover2);
-  border: 3px solid var(--hover2);
+  outline: 3px solid var(--hover2);
   font-weight: 500;
 }
 
@@ -68,6 +69,10 @@ body {
   padding: 5px;
   border-radius: 50%;
   transition: border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card .icon {
+  color: var(--hover);
 }
 
 .card:hover .photoStyle {
@@ -143,7 +148,7 @@ h1 {
 .icon {
   padding-left: 10px;
   font-size: 30px;
-  color: var(--hover);
+  color: var(--light);
 }
 
 .imgContainer {
@@ -190,7 +195,7 @@ nav {
 }
 
 .navbar-brand:hover {
-  color: var(--hover2);
+  color: var(--hover);
   text-decoration: none;
 }
 
