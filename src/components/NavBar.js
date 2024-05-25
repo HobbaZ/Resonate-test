@@ -35,7 +35,7 @@ const AppNavbar = () => {
                 to="/Home"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--resonateColour" : "--light"})`,
+                  color: `var(${isActive ? "--hover" : "--light"})`,
                 })}
               >
                 Home
@@ -47,7 +47,7 @@ const AppNavbar = () => {
                 to="/About"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--resonateColour" : "--light"})`,
+                  color: `var(${isActive ? "--hover" : "--light"})`,
                 })}
               >
                 About
@@ -59,7 +59,7 @@ const AppNavbar = () => {
                 to="/"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--resonateColour" : "--light"})`,
+                  color: `var(${isActive ? "--hover" : "--light"})`,
                 })}
               >
                 Contacts

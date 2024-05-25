@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container fluid">
         <footer className="fixed-bottom text-center">
           <div className="footerStyle">
-            <h4>Resonate Test, {year()}</h4>
+            <p>Resonate Test, {year()}</p>
             <div className="iconDiv">
               <i className="fab fa-linkedin icon"></i>
               <i className="fas fa-envelope-square icon"></i>

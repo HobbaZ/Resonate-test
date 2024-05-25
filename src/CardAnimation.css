@@ -1,11 +1,12 @@
 :root {
-  --resonateColour: #c73362;
+  --hover: #44970c;
+  --hover2: #0a7524;
 }
 
 .card:hover {
-  transition: outline 0.2s ease-in-out;
+  transition: outline 0.2s ease-in-out background-color 1s ease-in-out;
   outline: 4px solid rgba(255, 255, 255, 0.3);
-  background: var(--resonateColour);
+  background-image: linear-gradient(45deg, var(--hover), var(--hover2));
 }
 
 @media (max-width: 576px) {

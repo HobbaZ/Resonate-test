@@ -4,15 +4,13 @@
   --blue: #17274e;
   --purple: #2b1941;
   --transparent: rgba(255, 255, 255, 0);
-  --active: rgb(221, 221, 0);
-  --hover: orange;
-  --gradient1: #f1f1f1;
+  --hover: #44970c;
+  --hover2: #0a7524;
   --resonateColour: #c73362;
-  --gradient3: #eeeeee;
 }
 
 .active {
-  color: var(--resonateColour);
+  color: var(--green);
   text-decoration: none;
 }
 
@@ -25,7 +23,7 @@ body {
 
 body {
   box-sizing: border-box;
-  background-color: var(--gradient1);
+  background-color: var(--dark);
   width: 100%;
   padding-bottom: 100px;
   min-height: 100vh;
@@ -36,16 +34,16 @@ body {
 
 .btn,
 .btn-primary {
-  color: var(--light);
-  background-color: var(--resonateColour);
-  border: 2px solid var(--resonateColour);
+  color: var(--green);
+  background-color: var(--hover);
+  border: 2px solid var(--hover);
   font-weight: 500;
 }
 
 .btn:hover {
-  color: var(--dark);
-  background-color: var(--resonateColour);
-  border: 3px solid var(--resonateColour);
+  color: var(--light);
+  background-color: var(--hover2);
+  border: 3px solid var(--hover2);
   font-weight: 500;
 }
 
@@ -77,6 +75,15 @@ body {
   border-radius: 5px;
 }
 
+.card:hover .icon {
+  color: var(--light);
+}
+
+.card:hover .icon:hover {
+  color: var(--dark);
+  text-decoration: none;
+}
+
 .cardInfo {
   width: 100%;
   margin: auto;
@@ -106,14 +113,6 @@ body {
   flex-shrink: 2;
 }
 
-.contactsContainer {
-  justify-content: space-around;
-  margin: 5px;
-  padding: 5px;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
 .fa-solid {
   font-size: 25px;
   padding-right: 5px;
@@ -129,6 +128,10 @@ footer {
   color: var(--light);
 }
 
+footer .icon:hover {
+  color: var(--hover2);
+}
+
 .form-control {
   float: right;
 }
@@ -140,11 +143,7 @@ h1 {
 .icon {
   padding-left: 10px;
   font-size: 30px;
-}
-
-.icon:hover {
-  color: var(--dark);
-  text-decoration: none;
+  color: var(--hover);
 }
 
 .imgContainer {
@@ -180,11 +179,9 @@ nav {
 
 .nav-item .nav-link {
   font-size: 20px;
-  color: var(--light);
 }
 
 .nav-link:hover {
-  color: var(--hover);
   text-decoration: underline;
 }
 
@@ -193,7 +190,7 @@ nav {
 }
 
 .navbar-brand:hover {
-  color: var(--resonateColour);
+  color: var(--hover2);
   text-decoration: none;
 }
 
@@ -206,10 +203,4 @@ nav {
   height: 128px;
   width: auto;
   height: auto;
-}
-
-@media (max-width: 992px) {
-  .nav-link {
-    padding-left: 0px;
-  }
 }
