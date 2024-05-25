@@ -86,7 +86,7 @@ function Contacts() {
 }
 
 function Loading() {
-  return <h2>Getting Contacts...</h2>;
+  return <p>Getting Contacts...</p>;
 }
 
 export default Contacts;

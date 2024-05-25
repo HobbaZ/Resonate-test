@@ -1,9 +1,3 @@
-//import { Suspense } from "react";
-
-function DiffLoading() {
-  return <h2>Loading...</h2>;
-}
-
 export default function UserInfo({ user, photo }) {
   const loadingText = "Loading...";
 
