@@ -31,6 +31,7 @@ body {
   min-height: 100vh;
   backdrop-filter: blur(5px);
   font-family: "Monac";
+  color: var(--light);
 }
 
 .btn,
@@ -171,7 +172,6 @@ nav {
 .nav-item .nav-link {
   font-size: 20px;
   color: var(--light);
-  /*padding-left: 20px;*/
 }
 
 .nav-link:hover {

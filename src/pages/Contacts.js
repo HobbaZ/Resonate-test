@@ -3,10 +3,10 @@ const UserInfo = React.lazy(() => import("../components/UserInfo"));
 
 function Contacts() {
   const [infoMessage, setInfoMessage] = useState("");
-
   const [users, setUsers] = useState([]);
   const [photos, setPhotos] = useState([]);
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getContacts() {
@@ -29,20 +29,13 @@ function Contacts() {
       } catch (err) {
         setInfoMessage("Error getting data");
         console.error("Error getting data:", err);
+      } finally {
+        setLoading(false);
       }
     }
 
     getContacts();
   }, []);
-
-  useEffect(() => {
-    if (users.length > 0) {
-      console.log("Users:", users);
-      if (photos.length > 0) {
-        console.log("Photos:", photos);
-      }
-    }
-  }, [users, photos]);
 
   const filteredUsers = users.filter((user) =>
     user.name.toLowerCase().includes(query.toLowerCase())
@@ -53,8 +46,7 @@ function Contacts() {
       <div className="container-fluid pb-5">
         <h1 className="text-center py-3">Your Contacts</h1>
         <form
-          className="d-flex m-auto col-xs-12 col-sm-8 col-md-6 col-lg-6 col-xl-3 mb-4
-           search"
+          className="d-flex m-auto col-xs-12 col-sm-8 col-md-6 col-lg-6 col-xl-3 mb-4 search"
           role="search"
           onSubmit={(e) => e.preventDefault()}
         >
@@ -72,17 +64,21 @@ function Contacts() {
           {infoMessage && (
             <div className="alert alert-danger">{infoMessage}</div>
           )}
-          <Suspense fallback={<Loading />}>
-            {filteredUsers.length > 0 ? (
-              filteredUsers.map((user, index) => (
-                <React.Fragment key={user.id}>
-                  <UserInfo user={user} photo={photos[index]} />
-                </React.Fragment>
-              ))
-            ) : (
-              <div>No Users Found for "{query}"</div>
-            )}
-          </Suspense>
+          {loading ? (
+            <Loading />
+          ) : (
+            <Suspense fallback={<Loading />}>
+              {filteredUsers.length > 0 ? (
+                filteredUsers.map((user, index) => (
+                  <React.Fragment key={user.id}>
+                    <UserInfo user={user} photo={photos[index]} />
+                  </React.Fragment>
+                ))
+              ) : (
+                <div>No Users Found for "{query}"</div>
+              )}
+            </Suspense>
+          )}
         </div>
       </div>
     </>
