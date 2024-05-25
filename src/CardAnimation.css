@@ -1,0 +1,16 @@
+:root {
+  --resonateColour: #c73362;
+}
+
+.card:hover {
+  transition: outline 0.2s ease-in-out;
+  outline: 4px solid rgba(255, 255, 255, 0.3);
+  background: var(--resonateColour);
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import "./Animation.css";
+import "./CardAnimation.css";
 import Footer from "./components/Footer";
 import AppNavBar from "./components/NavBar";
 const Home = React.lazy(() => import("./pages/Home"));

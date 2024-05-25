@@ -4,7 +4,7 @@ function DiffLoading() {
   return <h2>Loading...</h2>;
 }
 
-export default function UserInfo({ user, photo, query }) {
+export default function UserInfo({ user, photo }) {
   const loadingText = "Loading...";
 
   return (
@@ -20,8 +20,8 @@ export default function UserInfo({ user, photo, query }) {
             />
           </div>
 
-          <div className="cardTopRight">
-            <h3>{user?.name || loadingText}</h3>
+          <div className="cardTopRight m-2">
+            <p>{user?.name || loadingText}</p>
           </div>
         </div>
         <hr />
@@ -29,7 +29,7 @@ export default function UserInfo({ user, photo, query }) {
         <div className="card-body">
           <p>
             <i className="fa-solid fa-building"></i>{" "}
-            {user?.company.name || loadingText}
+            {user?.company.name.replace("-", " ") || loadingText}
             <br />
             <i className="fa-solid fa-envelope"></i>{" "}
             {user?.email || loadingText}

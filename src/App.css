@@ -6,13 +6,13 @@
   --transparent: rgba(255, 255, 255, 0);
   --active: rgb(221, 221, 0);
   --hover: orange;
-  --gradient1: #0f774f;
-  --gradient2: #ff0000;
-  --gradient3: #360a7c;
+  --gradient1: #f1f1f1;
+  --resonateColour: #c73362;
+  --gradient3: #eeeeee;
 }
 
 .active {
-  color: var(--active);
+  color: var(--resonateColour);
   text-decoration: none;
 }
 
@@ -25,36 +25,27 @@ body {
 
 body {
   box-sizing: border-box;
-  background: linear-gradient(45deg, var(--gradient1), var(--gradient3));
-  /*background-color: var(--gradient1);*/
-  background-size: 800% 800%;
-  color: var(--light);
+  background-color: var(--gradient1);
   width: 100%;
   padding-bottom: 100px;
-  animation: example 20s ease infinite;
   min-height: 100vh;
+  backdrop-filter: blur(5px);
+  font-family: "Monac";
 }
 
-@keyframes example {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.btn {
+.btn,
+.btn-primary {
   color: var(--light);
-  border: 1px solid var(--light);
+  background-color: var(--resonateColour);
+  border: 2px solid var(--resonateColour);
+  font-weight: 500;
 }
 
 .btn:hover {
-  color: var(--active);
-  border: 1px solid var(--active);
+  color: var(--dark);
+  background-color: var(--resonateColour);
+  border: 3px solid var(--resonateColour);
+  font-weight: 500;
 }
 
 .card {
@@ -63,19 +54,15 @@ body {
   border: 0;
   color: var(--light);
   /*transition: transform 0.2s ease-in-out;*/
-  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   box-shadow: 0px 14px 80px rgba(0, 0, 0, 0.5);
+  outline: 2px solid rgba(255, 255, 255, 0.3);
   /*padding: 10px;*/
   width: 300px;
   min-width: 280px;
   max-width: 400px;
   flex-shrink: 1;
   flex-direction: column;
-}
-
-.card:hover {
-  transform: scale(1.02);
 }
 
 .card .photoStyle {
@@ -87,7 +74,6 @@ body {
 .card:hover .photoStyle {
   padding: 0;
   border-radius: 5px;
-  /*box-shadow: 0px 14px 80px rgba(0, 0, 0, 0.5);*/
 }
 
 .cardInfo {
@@ -104,17 +90,18 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 50%;
-  padding: 0;
+  padding: 5px;
   margin: 0;
 }
 
 .cardTopRight {
-  padding: 10px;
+  font-weight: 500;
   width: fit-content;
   text-align: left;
-  overflow-wrap: break-word;
+  font-size: 20px;
   word-wrap: normal;
   padding: 10px;
+  width: 100%;
   flex-shrink: 2;
 }
 
@@ -133,20 +120,30 @@ body {
 
 footer {
   background-color: var(--transparent);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(50px);
   border-top: 2px solid rgba(255, 255, 255, 0.1);
   width: 100%;
   height: 80px;
   padding: 5px;
+  color: var(--light);
 }
 
 .form-control {
   float: right;
 }
 
+h1 {
+  color: var(--light);
+}
+
 .icon {
   padding-left: 10px;
   font-size: 30px;
+}
+
+.icon:hover {
+  color: var(--dark);
+  text-decoration: none;
 }
 
 .imgContainer {
@@ -160,18 +157,20 @@ nav {
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
   font-size: large;
   color: var(--light);
+  backdrop-filter: blur(50px);
   font-weight: 500;
   width: 100vw;
 }
 
 .navbar-brand,
-.nav-link {
+.nav-item .nav-link {
   color: var(--light);
   text-decoration: none;
 }
 
-.nav-link {
+.nav-item .nav-link {
   font-size: 20px;
+  color: var(--light);
   /*padding-left: 20px;*/
 }
 
@@ -184,9 +183,8 @@ nav {
   background-color: var(--light);
 }
 
-.navbar-brand:hover,
-.icon:hover {
-  color: var(--active);
+.navbar-brand:hover {
+  color: var(--resonateColour);
   text-decoration: none;
 }
 
@@ -195,17 +193,10 @@ nav {
   border-bottom-right-radius: 5px;
   padding: 0;
   flex-shrink: 2;
-  max-width: 128px;
-  max-height: 128px;
+  width: 128px;
+  height: 128px;
   width: auto;
   height: auto;
-}
-
-@media (max-width: 576px) {
-  .card {
-    padding: 0;
-    margin: 0;
-  }
 }
 
 @media (max-width: 992px) {

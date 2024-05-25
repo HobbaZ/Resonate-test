@@ -1,0 +1,33 @@
+:root {
+  --gradient1: #000000;
+  --gradient2: #ffffff;
+}
+
+@keyframes example {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+body {
+  background: linear-gradient(
+      135deg,
+      #0000 18.75%,
+      var(--gradient1) 0 31.25%,
+      #0000 0
+    ),
+    repeating-linear-gradient(
+      45deg,
+      var(--gradient1) -12% 12%,
+      var(--gradient2) 10% 13%
+    );
+  background-size: 66px 66px;
+  animation: example 60s linear infinite;
+
+  /*background: linear-gradient(45deg, var(--gradient1), var(--gradient2));
+  animation: example 10s ease infinite;
+  background-size: 800% 800%;*/
+}

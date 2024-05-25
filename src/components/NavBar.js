@@ -35,7 +35,7 @@ const AppNavbar = () => {
                 to="/Home"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--active" : "--light"})`,
+                  color: `var(${isActive ? "--resonateColour" : "--light"})`,
                 })}
               >
                 Home
@@ -47,7 +47,7 @@ const AppNavbar = () => {
                 to="/About"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--active" : "--light"})`,
+                  color: `var(${isActive ? "--resonateColour" : "--light"})`,
                 })}
               >
                 About
@@ -59,7 +59,7 @@ const AppNavbar = () => {
                 to="/"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--active" : "--light"})`,
+                  color: `var(${isActive ? "--resonateColour" : "--light"})`,
                 })}
               >
                 Contacts
@@ -76,7 +76,7 @@ const AppNavbar = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-            <button className="btn btn-outline" type="submit">
+            <button className="btn btn-primary" type="submit">
               Search
             </button>
           </form>
