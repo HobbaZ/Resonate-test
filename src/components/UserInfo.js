@@ -1,38 +1,36 @@
 export default function UserInfo({ user, photo }) {
-  const loadingText = "Loading...";
+  //const loadingText = "Loading...";
 
   return (
     <>
-      <div className="card col-xs-12 col-sm-6 col-lg-4 m-2">
+      <div className="card col-xs-12 flex-xs-row flex-sm-column col-sm-4 col-md-4 col-lg-3 m-2 d-flex">
         {/*<Suspense fallback={<DiffLoading />}>*/}
-        <div className="cardTop">
+        <div className="cardTop d-flex flex-xs-row justify content-center">
           <div className="imgContainer text-center">
             <img
               src={photo || "placeholder-image-url"}
-              alt={`${user?.name || loadingText}`}
+              alt={`${user?.name || ""}`}
               className="card-img-top photoStyle"
             />
           </div>
 
-          <div className="cardTopRight m-2">
-            <p>{user?.name || loadingText}</p>
+          <div className="cardTopRight mr-auto">
+            <p>{user?.name || ""}</p>
           </div>
         </div>
-        <hr />
 
-        <div className="card-body">
+        <div className="card-body d-flex flex-column flex-xs-row justify-content-around align-items-center p-3">
           <p>
             <i className="fa-solid fa-building"></i>{" "}
-            {user?.company.name.replace("-", " ") || loadingText}
+            {user?.company.name.replace("-", " ") || ""}
             <br />
-            <i className="fa-solid fa-envelope"></i>{" "}
-            {user?.email || loadingText}
+            <i className="fa-solid fa-envelope"></i> {user?.email || ""}
             <br />
             <i className="fa-solid fa-location-dot"></i>{" "}
             {user?.address
               ? `${user.address.suite} ${user.address.street},
             ${user.address.city}, ${user.address.zipcode}`
-              : loadingText}
+              : ""}
           </p>
 
           <div className="text-center iconDiv">
