@@ -60,7 +60,7 @@ function Contacts() {
           />
         </form>
 
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="container fluid d-flex flex-wrap justify-content-center">
           {infoMessage && (
             <div className="alert alert-danger">{infoMessage}</div>
           )}

@@ -57,9 +57,10 @@ body {
   border: 0;
   color: var(--light);
   justify-content: space-between;
+  display: flex;
   outline: 2px solid rgba(255, 255, 255, 0.3);
-  flex-shrink: 1;
   min-width: 350px;
+  flex-shrink: 1;
 }
 
 .card .photoStyle {
@@ -199,10 +200,4 @@ nav {
   height: 128px;
   width: auto;
   height: auto;
-}
-
-@media (max-width=992px) {
-  .card .icon {
-    font-size: 10px;
-  }
 }

@@ -3,7 +3,7 @@ export default function UserInfo({ user, photo }) {
 
   return (
     <>
-      <div className="card col-xs-12 flex-xs-row flex-sm-column col-sm-4 col-md-4 col-lg-3 m-2 d-flex">
+      <div className="card col flex-column col-sm-2 col-md-6 col-lg-3 m-2">
         {/*<Suspense fallback={<DiffLoading />}>*/}
         <div className="cardTop d-flex flex-xs-row justify content-center">
           <div className="imgContainer text-center">
