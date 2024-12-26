@@ -49,7 +49,7 @@ function Contacts() {
 
   return (
     <>
-      <div className="container-fluid pb-5 col-sm-12 col-md-8 col-lg-4 contactsContainer">
+      <div className="container-fluid pb-5 col-xs-12 col-sm-8 col-lg-4 contactsContainer">
         <h1 className="text-center py-3">Your Contacts</h1>
         <form
           className="w-100 mb-4 d-flex justify-content-center search"

@@ -58,8 +58,8 @@ body {
   color: var(--light);
   justify-content: space-between;
   display: flex;
-  min-width: 350px;
-  flex-shrink: 1;
+  min-width: 320px;
+  flex-shrink: 2;
 }
 
 .card .photoStyle {
