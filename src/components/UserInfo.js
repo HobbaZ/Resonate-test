@@ -1,7 +1,7 @@
 export default function UserInfo({ user, photo }) {
   return (
     <>
-      <div className="card col flex-column col-sm-2 col-md-6 col-lg-3 ">
+      <div className="card col flex-column">
         <div className="cardTop d-flex flex-xs-row justify content-center">
           <div className="imgContainer">
             <img
