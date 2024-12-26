@@ -1,12 +1,9 @@
 export default function UserInfo({ user, photo }) {
-  //const loadingText = "Loading...";
-
   return (
     <>
       <div className="card col flex-column col-sm-2 col-md-6 col-lg-3 m-2">
-        {/*<Suspense fallback={<DiffLoading />}>*/}
         <div className="cardTop d-flex flex-xs-row justify content-center">
-          <div className="imgContainer text-center">
+          <div className="imgContainer">
             <img
               src={photo || "placeholder-image-url"}
               alt={`${user?.name || ""}`}
@@ -41,7 +38,6 @@ export default function UserInfo({ user, photo }) {
             <i className="fa-solid fa-phone icon"></i>
           </div>
         </div>
-        {/*</Suspense>*/}
       </div>
     </>
   );

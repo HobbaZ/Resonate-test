@@ -35,7 +35,7 @@ const AppNavbar = () => {
                 to="/Home"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--hover" : "--light"})`,
+                  color: `var(${isActive ? "--hover2" : "--light"})`,
                 })}
               >
                 Home
@@ -47,7 +47,7 @@ const AppNavbar = () => {
                 to="/About"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--hover" : "--light"})`,
+                  color: `var(${isActive ? "--hover2" : "--light"})`,
                 })}
               >
                 About
@@ -59,27 +59,13 @@ const AppNavbar = () => {
                 to="/"
                 className="nav-link ml-3 my-2"
                 style={({ isActive }) => ({
-                  color: `var(${isActive ? "--hover" : "--light"})`,
+                  color: `var(${isActive ? "--hover2" : "--light"})`,
                 })}
               >
                 Contacts
               </NavLink>
             </li>
           </ul>
-
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <button className="btn btn-primary" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>

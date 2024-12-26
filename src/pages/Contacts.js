@@ -24,7 +24,13 @@ function Contacts() {
         const usersData = await usersResponse.json();
         const photosData = await photosResponse.json();
 
-        setUsers(usersData);
+        //Sort users by first name
+        setUsers(
+          usersData.sort((a, b) =>
+            a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+          )
+        );
+
         setPhotos(photosData.results.map((result) => result.picture.large));
       } catch (err) {
         setInfoMessage("Error getting data");
@@ -43,15 +49,15 @@ function Contacts() {
 
   return (
     <>
-      <div className="container-fluid pb-5">
+      <div className="container-fluid pb-5 col-sm-12 col-md-8 col-lg-4 contactsContainer">
         <h1 className="text-center py-3">Your Contacts</h1>
         <form
-          className="d-flex m-auto col-xs-12 col-sm-8 col-md-6 col-lg-6 col-xl-3 mb-4 search"
+          className="w-100 mb-4 d-flex justify-content-center search"
           role="search"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
-            className="form-control me-2"
+            className="form-control me-2 w-100"
             type="search"
             placeholder="Search"
             aria-label="Search for a contact"
@@ -60,7 +66,7 @@ function Contacts() {
           />
         </form>
 
-        <div className="container fluid d-flex flex-wrap justify-content-center">
+        <div className="container d-flex flex-column justify-content-center align-contents-center">
           {infoMessage && (
             <div className="alert alert-danger">{infoMessage}</div>
           )}
@@ -70,9 +76,9 @@ function Contacts() {
             <Suspense fallback={<Loading />}>
               {filteredUsers.length > 0 ? (
                 filteredUsers.map((user, index) => (
-                  <React.Fragment key={user.id}>
+                  <div key={user.id} className="d-flex justify-content-center">
                     <UserInfo user={user} photo={photos[index]} />
-                  </React.Fragment>
+                  </div>
                 ))
               ) : (
                 <div>No Users Found for "{query}"</div>

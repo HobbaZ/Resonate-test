@@ -4,8 +4,8 @@
   --blue: #17274e;
   --purple: #2b1941;
   --transparent: rgba(255, 255, 255, 0);
-  --hover: #42c505;
-  --hover2: #019e55;
+  --hover: rgba(255, 255, 255, 0);
+  --hover2: #554eb8;
   --resonateColour: #c73362;
   --gradient1: #000000;
   --gradient2: #ffffff;
@@ -58,7 +58,6 @@ body {
   color: var(--light);
   justify-content: space-between;
   display: flex;
-  outline: 2px solid rgba(255, 255, 255, 0.3);
   min-width: 350px;
   flex-shrink: 1;
 }
@@ -70,11 +69,11 @@ body {
 }
 
 .card .icon {
-  color: var(--hover);
+  color: var(--hover2);
 }
 
 .card:hover .photoStyle {
-  border-radius: 5px;
+  border-radius: 17px 5px 5px 5px;
 }
 
 .card:hover .icon {
@@ -82,7 +81,7 @@ body {
 }
 
 .card:hover .icon:hover {
-  color: var(--dark);
+  color: var(--hover2);
   text-decoration: none;
 }
 
@@ -105,6 +104,10 @@ body {
   font-size: 20px;
   word-wrap: normal;
   padding: 10px;
+}
+
+.contactsContainer {
+  margin: auto;
 }
 
 .fa-solid {
@@ -133,14 +136,13 @@ footer .icon:hover {
 }
 
 h1 {
-  color: var(--light);
+  color: var(--hover2);
 }
 
 .icon {
   padding-left: 10px;
-  color: linear-gradient(to right, #006175 0%, #00a950 100%);
+  color: var(--light);
   font-size: 30px;
-  /*color: var(--light);*/
 }
 
 .imgContainer {
@@ -187,7 +189,7 @@ nav {
 }
 
 .navbar-brand:hover {
-  color: var(--hover);
+  color: var(--hover2);
   text-decoration: none;
 }
 
