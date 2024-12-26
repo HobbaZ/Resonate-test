@@ -85,6 +85,10 @@ body {
   text-decoration: none;
 }
 
+.card-body {
+  padding: 0;
+}
+
 .card-title {
   text-align: center;
 }
@@ -198,8 +202,6 @@ nav {
   border-bottom-right-radius: 5px;
   padding: 0;
   flex-shrink: 2;
-  width: 128px;
-  height: 128px;
-  width: auto;
+  width: 100%;
   height: auto;
 }

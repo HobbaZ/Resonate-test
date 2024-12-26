@@ -76,7 +76,10 @@ function Contacts() {
             <Suspense fallback={<Loading />}>
               {filteredUsers.length > 0 ? (
                 filteredUsers.map((user, index) => (
-                  <div key={user.id} className="d-flex justify-content-center">
+                  <div
+                    key={user.id}
+                    className="d-flex justify-content-center p-0 m-0"
+                  >
                     <UserInfo user={user} photo={photos[index]} />
                   </div>
                 ))
